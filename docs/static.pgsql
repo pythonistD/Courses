@@ -42,13 +42,27 @@ insert into group_contacts (fk_actual_group, fk_contacts) values
     (1, 1),
     (2, 2);
 
-insert into subject (subject_name, term) VALUES
-    ('ИСБД', 5),
-    ('Архитектура компьютера', 5),
-    ('Операционные системы', 5);
+insert into subject (subject_name) VALUES
+    ('ИСБД'),
+    ('Архитектура компьютера'),
+    ('Операционные системы');
+
+insert into subject (subject_name) VALUES
+    ('ОПД'),
+    ('Информационная безопасность'),
+    ('Робототехника');
 
 insert into course (fk_subject, lector) values
     (1, 3);
+
+insert into course (course_name, term, fk_subject, lector) values
+    ('Введение в Архитектуру компьютера', 5, 2, 4),
+    ('Основы информационной безопасности', 5, 5, 10),
+    ('Учимся делать Терминатора', 5, 6, 16);
+
+insert into course (course_name, term, fk_subject, lector) values
+    ('Введение в операционные системы', 5, 3, 5),
+    ('Основы профессиональной деятельности', 1, 4, 6)
 
 insert into contacts_course (fk_course, fk_contacts) VALUES
     (1, 3);
